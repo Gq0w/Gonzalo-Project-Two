@@ -1,3 +1,7 @@
+Pitch
+I want to make a app where the user can login to the app, see a big array of news articles, select which article they can read, once read they can comment on that article, then if they want to they can make their own article
+
+
 USER STORY
 - User can login with their user name
 - User can enter the index with their username appearing
@@ -72,4 +76,4 @@ Create User ||| /user ||| Post ||| Actually creates the user
 
 
 
-![ERD](/wireframes/ERD.png)
+![ERD](/wireframes/ERD.jpg)
