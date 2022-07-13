@@ -76,4 +76,4 @@ Create User ||| /user ||| Post ||| Actually creates the user
 
 
 
-![ERD](/wireframes/ERD.jpg)
+![ERD](/wireframes/ERD.JPG)
