@@ -1,0 +1,14 @@
+Name  |||  Path          ||| HTTP Verb ||| Purpose
+
+Index ||| /thenews       ||| get       ||| Shows the news articles in a List
+Show  ||| /thenews/:id   ||| show      ||| Shows the news article the user has selected
+New   ||| /thenews/new   ||| create    ||| User is able to make their own article displaying their information
+
+
+
+Comment routes 
+
+Name    ||| Path     ||| HTTP Verb ||| Purpose
+
+Comment ||| /comment |||   Post    ||| Allows the user to make a comment 
+
