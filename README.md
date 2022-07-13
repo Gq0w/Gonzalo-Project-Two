@@ -30,3 +30,7 @@ My initial plan
 - Set up my routes, shows, create and edits
 - Once routes are ready begin to use HTML and the models to form the page and article
 - Using HTML possibly make a small area under the article that will display the users comment
+
+My wireframes 
+
+(/wireframes/Index Page.png)
