@@ -67,8 +67,9 @@ Comment routes
 
 
 Create user 
-| -- | -- | -- | -- |
+
 | Name        | Path           | HTTP Verb | Purpose |
+| -- | -- | -- | -- |
 | Create user form | /user/register | Get       | Make the user | 
 | Create User | /user | Post | Actually creates the user |
 
