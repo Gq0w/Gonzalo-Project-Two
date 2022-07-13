@@ -33,4 +33,39 @@ My initial plan
 
 My wireframes 
 
-(/wireframes/Index Page.png)
+![Wireframe 1](/wireframes/LoginPage.png)
+![Wireframe 2](/wireframes/SignPage.png)
+![Wireframe 3](/wireframes/IndexPage.png)
+![Wireframe 4](/wireframes/ShowPage.png)
+![Wireframe 5](/wireframes/NewPage.png)
+![Wireframe 2](/wireframes/CommentsPage.png)
+
+
+Restful routes
+
+Name  |||  Path          ||| HTTP Verb ||| Purpose
+
+Index ||| /thenews       ||| get       ||| Shows the news articles in a List
+Show  ||| /thenews/:id   ||| show      ||| Shows the news article the user has selected
+New   ||| /thenews/new   ||| create    ||| User is able to make their own article displaying their information
+
+
+
+Comment routes 
+
+Name    ||| Path     ||| HTTP Verb ||| Purpose
+
+Create Comment ||| /comment/new ||| Get    ||| Makes the comment page
+Comment        ||| /comment     ||| Post   ||| Allows the user to make a comment 
+Edit a comment ||| /coment/:id/edit ||| Get ||| Allows the user to make edits to their comments
+Delete Comment ||| /comment/:id ||| Delete ||| Deletes the comment
+
+
+
+Create user 
+
+Name        ||| Path           ||| HTTP Verb ||| Purpose
+
+Create user form ||| /user/register ||| Get       ||| Make the user 
+
+Create User ||| /user ||| Post ||| Actually creates the user
