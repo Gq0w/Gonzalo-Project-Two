@@ -38,7 +38,7 @@ My wireframes
 ![Wireframe 3](/wireframes/IndexPage.png)
 ![Wireframe 4](/wireframes/ShowPage.png)
 ![Wireframe 5](/wireframes/NewPage.png)
-![Wireframe 2](/wireframes/CommentsPage.png)
+![Wireframe 6](/wireframes/CommentsPage.png)
 
 
 Restful routes
@@ -69,3 +69,7 @@ Name        ||| Path           ||| HTTP Verb ||| Purpose
 Create user form ||| /user/register ||| Get       ||| Make the user 
 
 Create User ||| /user ||| Post ||| Actually creates the user
+
+
+
+![ERD](/wireframes/ERD.png)
