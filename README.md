@@ -75,4 +75,4 @@ Create user
 
 
 
-![ERD](/wireframes/ERD.JPG)
+![ERD](/wireframes/NEWERD.JPG)
