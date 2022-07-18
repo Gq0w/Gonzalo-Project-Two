@@ -2,23 +2,20 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const methodOverride = require('method-override')
-const newsRoutes = require('./controller/news_routes')
+const thenewsRoutes = require('./controller/news_routes')
 const userRoutes = require('./controller/user_routes')
 const commentRoutes = require('./controller/comment_routes')
 
-// Create our express application object
 const app = require('liquid-express-views')(express())
 
 // Middleware
 app.use(morgan('tiny'))
 app.use(methodOverride('_method'))
-// parses urlencoded request bodies
 app.use(express.urlencoded({ extended: false }))
-// to serve files from public statically
 app.use(express.static('public'))
-// bring in our session middleware
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
+
 
 // here's the middleware that sets up our sessions
 app.use(
@@ -33,14 +30,22 @@ app.use(
 )
 
 // Routes
-app.use('/news', newsRoutes)
+app.use('/thenews', thenewsRoutes)
 app.use('/users', userRoutes)
-app.use('/comments', commentRoutes)
+//app.use('/comments', commentRoutes)
 
-// localhost:3000/
+
+
+
+
+
+
+
+
 app.get('/', (req, res) => {
-	res.redirect('/news')
+	res.redirect('/thenews')
 })
+
 
 // Server Listener
 const PORT = process.env.PORT

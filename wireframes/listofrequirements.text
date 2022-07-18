@@ -1,0 +1,33 @@
+My API key for my news model - pVeA35DOYWfZRJTUsDTw8UvEgllsYM2tB8kfGhKjJfd_Xrv9
+
+List of required NPM nodes
+
+ "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "install": "^0.13.0",
+    "liquid-express-views": "^1.0.8",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.4.4",
+    "morgan": "^1.10.0"
+
+https://api.currentsapi.services/v1/latest-news${process.env.API_KEY}
+
+my first array of items
+{{data.news[0].id}} 
+{{data.news[0].title}}
+{{data.news[0].description}}
+
+
+my second array of items
+{{data.news[1].id}}
+{{data.news[1].title}}
+{{data.news[1].description}}
+
+
+my third array of items
+{{data.news[2].id}}
+{{data.news[2].title}}
+{{data.news[2].description}}
