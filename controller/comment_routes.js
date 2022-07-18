@@ -3,8 +3,8 @@ const router = express.Router()
 const News = require('../models/news')
 
 
-router.get('/', (req, res) => {
-    res.render('views/comment.liquid')
+router.get('/comment', (req, res) => {
+    res.render('/comment.liquid')
 })
 
 

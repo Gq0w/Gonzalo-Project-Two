@@ -1,16 +1,38 @@
 {% layout 'layout.liquid' %}
 {% block content %}
+<!-- news: [
+{
+   author: "RNS",
+   category: [
+      "exchange",
+      "stock"
+   ],
+   description: "London Stock Exchange plc is not responsible for and does not check content on this Website. Website users are responsible for checking content. Any news item (including any prospectus) which is addre...",
+   id: "12224614-f22f-4e7b-8cc8-4b9ed3fc075f",
+   image: "https://www.londonstockexchange.com/favicon.ico",
+   language: "en",
+   published: "2022-07-18 17:31:40 +0000",
+   title: "Transaction in Own Shares, price: 1,643.50 - 3.59%",
+   url: "https://www.londonstockexchange.com/news-article/BRBY/transaction-in-own-shares/15545592"
+}, -->
 
-  <h1>hi</h1>
-  
+
+
+  <h1>hi my index</h1>
+
+  {% for story in data.news %}
+
+  <div class = "mystories">
+
+  <a href="thenews/show/{{story.id}}">{{story.title}}</a> 
 
 
 
 
 
 
+  </div>
 
-
-
+{% endfor %}
 
 {% endblock %}
