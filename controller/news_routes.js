@@ -48,13 +48,7 @@ router.get('/show', (req, res) => {
 
 
 
-
-
 /// use stackoverflow, on fetch req make a schema then push to database
-
-
-
-
 
 
 
@@ -67,12 +61,6 @@ router.get('/show', (req, res) => {
         
 //     })
 // })
-
-
-
-
-
-
 
 
 

@@ -27,16 +27,16 @@
   {% for story in data.news %}
 
   <div class = "mystories">
-
-  <a href="thenews/show">{{story.title}}</a> 
-
-
-
-
-
-
-  </div>
-
+   <div style="width: 10%">
+      <div class="card" style="width: 18rem;">
+        <img src={{story.image}} style="width: 200px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{story.title}}</h5>
+          <p class="card-text">{{story.description}}</p>
+          <a href="#" class="btn btn-primary">Save</a>
+        </div>
+      </div>
+    </div>
 {% endfor %}
 
 {% endblock %}
