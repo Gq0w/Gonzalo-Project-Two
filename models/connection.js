@@ -10,6 +10,8 @@ const config = {
     useUnifiedTopology: true
 }
 
+
+
 // connecting to mongoose
 mongoose.connect(DATABASE_URI, config)
 
