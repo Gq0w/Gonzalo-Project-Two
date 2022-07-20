@@ -28,22 +28,28 @@ router.get('/', (req, res) => {
 // figure out a way to specify which article i want to select 
 // User clicks on a title page and is sent to the relavent data that is related to that id
 
-router.get('/show/:id', (req, res) => {
+router.get('/show', (req, res) => {
     console.log("inside show route")
     const APIrequestUrl = `https://api.currentsapi.services/v1/latest-news?apiKey=pVeA35DOYWfZRJTUsDTw8UvEgllsYM2tB8kfGhKjJfd_Xrv9`
-    findById()
+    // findById()
+    fetch(APIrequestUrl)
         .then(apiResponse => apiResponse.json()) // single line arrow functions implicitly return
-        .then(json => console.log(json)) // this waits until we actually get the json to try to see it
-        .then(storyArray => storyArray.find(singleStory => singleStory.id === req.params.id)) 
+        // .then(json => console.log(json)) // this waits until we actually get the json to try to see it
         .then(data => {
-            News.insertMany(data)
-            console.log(data,`in show route after show request and sort`)
+            //News.insertMany(data)
+            console.log(`in show route after show request and sort`, data.news)
             res.render(`thenews/show`, {data: data})
         })
         .catch(err => {
             res.json(err)
         })
 })
+
+
+
+
+
+
 /// use stackoverflow, on fetch req make a schema then push to database
 
 
@@ -63,15 +69,6 @@ router.get('/show/:id', (req, res) => {
 // })
 
 
-
-
-
-
-
-
-router.get('/', (req, res) => {
-    res.render('thenews/index')
-})
 
 
 
