@@ -4,8 +4,8 @@ const router = express.Router()
 const News = require('../models/news')
 const { $where } = require('../models/user')
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args))
-
-
+const Favs = require('../models/favorites')
+const session = require('express-session')
 
 
 
@@ -14,14 +14,41 @@ router.get('/', (req, res) => {
     const APIrequestUrl = "https://api.currentsapi.services/v1/latest-news?apiKey=pVeA35DOYWfZRJTUsDTw8UvEgllsYM2tB8kfGhKjJfd_Xrv9"
     fetch(APIrequestUrl)
     .then(res => res.json())
+    // .then(data => {
+    //     req.session.news = {
+    //         title: data.news.title,
+    //         description: data.news.description,
+    //         image: data.news.img
+    //     }
+    // })
     .then(data => {
         News.insertMany(data)
         // console.log(data)
         res.render('thenews/index.liquid', {data: data})
     })
     .catch(err => {
+        console.log(err)
         res.json(err)
     })
+})
+
+router.get('/favorites', (req, res) => {
+    res.render('thenews/favorites.liquid')
+})
+
+
+
+router.post('/favorites/:id', (req, res) => {
+    req.body.owner = req.session.userId
+     console.log(req.session.news)
+        //  Favs.create(req.body)
+        //      .then(favorites => {
+        //          console.log(favorites)
+        //          res.redirect('/thenews/favorites')
+        //        })
+        //      .catch(err => {
+        //          res.json(err)
+        //      })
 })
 
 
@@ -44,6 +71,7 @@ router.get('/show', (req, res) => {
             res.json(err)
         })
 })
+
 
 
 
