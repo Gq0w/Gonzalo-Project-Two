@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs')
 
 
 const router = express.Router()
-
+// signup route
 router.get('/signup', (req, res) => {
     res.render('users/signup')
 })
@@ -13,7 +13,7 @@ router.post('/signup', async (req, res) => {
         req.body.password,
         await bcrypt.genSalt(10)
     )
-
+// make my user
     User.create(req.body)
         .then(user => {
             res.redirect('/users/login')
@@ -22,7 +22,7 @@ router.post('/signup', async (req, res) => {
             res.json(error)
         })
 })
-
+// user route
 router.get('/login', (req, res) => {
     res.render('users/login')
 })

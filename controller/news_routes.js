@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
     const APIrequestUrl = "https://api.currentsapi.services/v1/latest-news?apiKey=pVeA35DOYWfZRJTUsDTw8UvEgllsYM2tB8kfGhKjJfd_Xrv9"
     fetch(APIrequestUrl)
     .then(res => res.json())
+    // doesnt post like it should
     // .then(data => {
     //     req.session.news = {
     //         title: data.news.title,
