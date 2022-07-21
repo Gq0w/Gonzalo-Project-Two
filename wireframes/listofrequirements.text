@@ -31,3 +31,8 @@ my third array of items
 {{data.news[2].id}}
 {{data.news[2].title}}
 {{data.news[2].description}}
+
+
+
+DO HEROKU RESTART
+GIT PUSH HEROKU MAIN
