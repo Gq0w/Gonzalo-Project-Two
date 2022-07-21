@@ -8,7 +8,7 @@ const Favs = require('../models/favorites')
 const session = require('express-session')
 
 
-
+// my index
 router.get('/', (req, res) => {
     console.log("inside index route")
     const APIrequestUrl = "https://api.currentsapi.services/v1/latest-news?apiKey=pVeA35DOYWfZRJTUsDTw8UvEgllsYM2tB8kfGhKjJfd_Xrv9"
@@ -38,7 +38,7 @@ router.get('/favorites', (req, res) => {
 })
 
 
-
+// my favorites 
 router.post('/favorites/:id', (req, res) => {
     req.body.owner = req.session.userId
      console.log(req.session.news)
@@ -56,6 +56,7 @@ router.post('/favorites/:id', (req, res) => {
 // figure out a way to specify which article i want to select 
 // User clicks on a title page and is sent to the relavent data that is related to that id
 
+// my show
 router.get('/show', (req, res) => {
     console.log("inside show route")
     const APIrequestUrl = `https://api.currentsapi.services/v1/latest-news?apiKey=pVeA35DOYWfZRJTUsDTw8UvEgllsYM2tB8kfGhKjJfd_Xrv9`
