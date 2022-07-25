@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const { findById } = require('../models/news')
 const router = express.Router()
@@ -6,6 +7,9 @@ const { $where } = require('../models/user')
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args))
 const Favs = require('../models/favorites')
 const session = require('express-session')
+
+
+/// Seed data, allow users to favorite, Comments maybe
 
 
 // my index
