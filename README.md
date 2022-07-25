@@ -1,6 +1,23 @@
 Pitch
 I want to make a app where the user can login to the app, see a big array of news articles, select which article they can read, once read they can comment on that article, then if they want to they can make their own article
 
+Install Instructions
+Use NPM Install  
+bcryptjs
+connect-mongo
+dotenv
+express 
+express-sessio
+install 
+liquid-express-views
+method-override
+mongoose
+morgan
+node-fetch
+
+Then NPM Start
+
+
 
 USER STORY
 - User can login with their user name
