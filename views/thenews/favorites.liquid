@@ -5,22 +5,17 @@
 
 
   {% for story in favorites %}
+  <div class="card">
+    <img src={{story.image}} style="width: 200px" class="card-img-top" >
+      <h5 class="card-title">{{story.title}}</h5>
+      <p class="card-text">{{story.description}}</p>
+   <form action="/thenews/{{story._id}}" method="POST">
+       <input value="{{story.description}}" name="description" hidden>
+       <input value="{{story.title}}" name="title" hidden>
+       <input value="{{story.image}}" name="image" hidden>
 
-  <div class = "mystories" style="text-align: center;" style="">
-   <div style="width: 10%">
-   <div class="card" style="width: 18rem;">
-         <img src={{story.image}} style="width: 200px" class="card-img-top" >
-         <div class="card-body">
-
-             <h5 class="card-title">{{story.title}}</h5>
-             <p class="card-text">{{story.description}}</p>
-
-             <form action="/thenews/{{story._id}}" method="POST">
-              
-         </form>
-         </div>
-   </div>
-   <div>
+   </form>
+</div>
 {% endfor %}
 
 
