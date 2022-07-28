@@ -1,24 +1,16 @@
 const mongoose = require('./connection')
 const { Schema, model } = mongoose
 
-const newSchema = new Schema({
-    news: 
-    [
-        {
+const newSchema = new Schema(
+    {
         author: String,
-        category: {
-            exchange: String,
-            stock: String
-        },
         description: String,
         title: String,
         published: String,
         url: String,
-        img: String,
-
-    }
-   ]
-})
+        image: String
+        }
+)
 
 // _id: ObjectId("62d6004787ca520b92fa8e91") use this to find our data
 // TitleName = data.news.title

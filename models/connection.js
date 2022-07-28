@@ -4,16 +4,16 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 
 
-const DATABASE_URI = process.env.DATABASE_URI
-const config = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}
+const DATABASE_URI = "mongodb://localhost/thenews"
+// const config = {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }
 
 
 
 // connecting to mongoose
-mongoose.connect(DATABASE_URI, config)
+mongoose.connect(DATABASE_URI)
 
 mongoose.connection.on('connected', () => {
 	console.log(
@@ -25,9 +25,9 @@ mongoose.connection.on('error', (err) => {
 	console.log('Could not connect to MongoDB!', err)
 })
 
-// mongoose.connection
-//     .on('open', () => console.log('Connected to Mongoose'))
-//     .on('close', () => console.log('Disconnected from Mongoose'))
-//     .on('error', err => console.error(err))
+mongoose.connection
+    .on('open', () => console.log('Connected to Mongoose'))
+    .on('close', () => console.log('Disconnected from Mongoose'))
+    .on('error', err => console.error(err))
 
 module.exports = mongoose

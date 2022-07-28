@@ -24,22 +24,28 @@
   
 
 
-  {% for story in data.news %}
+  {% for story in news %}
 
   <div class = "mystories" style="text-align: center;" style="">
    <div style="width: 10%">
-      <div class="card" style="width: 18rem;">
-        <img src={{story.image}} style="width: 200px" class="card-img-top" >
-        <div class="card-body">
-          <h5 class="card-title">{{story.title}}</h5>
-          <p class="card-text">{{story.description}}</p>
-          <form action="favorites/{{story.id}}" method="POST">
-            <input type="submit" value="Favorite" class="btn btn-danger">
+   <div class="card" style="width: 18rem;">
+         <img src={{story.image}} style="width: 200px" class="card-img-top" >
+         <div class="card-body">
+             <h5 class="card-title">{{story.title}}</h5>
+             <p class="card-text">{{story.description}}</p>
+             <form action="/thenews/{{story._id}}" method="POST">
+               <input value="{{story.description}}" name="description" hidden>
+               <input value="{{story.title}}" name="title" hidden>
+               <input value="{{story.image}}" name="image" hidden>
+
+
+               <h1>Hi</h1>
+             <input type="submit" value="Favorite" class="btn btn-danger">
 
          </form>
-        </div>
-      </div>
-    </div>
+         </div>
+   </div>
+   <div>
 {% endfor %}
 
 {% endblock %}

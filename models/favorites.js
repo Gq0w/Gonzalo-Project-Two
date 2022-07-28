@@ -1,27 +1,22 @@
 const mongoose = require('./connection')
 const { Schema, model } = mongoose
 
-const favSchema = new Schema({
-    news: 
-    [
-        {
+const favSchema = new Schema(
+    {
         author: String,
-        category: {
-            exchange: String,
-            stock: String
-        },
         description: String,
         title: String,
         published: String,
         url: String,
-        img: String,
+        image: String,
+
+        owner: {
+            type: Schema.Types.ObjectId, // a single User ._id
+            ref: 'User' // const User = model('User', userSchema) the string of 'User' is how we reference a model
+        }
     }
-   ],
-   owner: {
-    type: Schema.Types.ObjectId, // a single User ._id
-    ref: 'User', // const User = model('User', userSchema) the string of 'User' is how we reference a model
-},
-})
+    
+)
 
 
 const Favs = model('favorites', favSchema)
