@@ -1,10 +1,14 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 
-{% for story in data.news %}
-<div class="showIndex">
-  <h1>Hi my show</h1>
-</div>
-{% endfor %}
+<h1><a href="/thenews/favorites">Go back</a></h1>
 
+
+         <img src={{favorites.image}} style="width: 300px" class="card-img-top" >
+            <h5>{{favorites.title}}</h5>
+            <p>{{favorites.author}}</p>
+            <p>{{favorites.description}}</p>
+            <p>{{favorites.link}}</p>
+
+   
 {% endblock %}

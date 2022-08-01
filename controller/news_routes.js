@@ -11,6 +11,19 @@ const session = require('express-session')
 
 /// Seed data, allow users to favorite, Comments maybe
 
+// delete route
+router.delete('/:id', (req, res) => {
+    const favoriteId = req.params.id
+
+    Favs.findByIdAndRemove(favoriteId)
+        .then(favorites => {
+            res.redirect('/thenews/favorites')
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
 
 router.get('/', async (req, res) => {
     await News.find({}) 
@@ -24,6 +37,78 @@ router.get('/', async (req, res) => {
         })
 })
 
+
+router.get('/favorites', (req, res) => {
+    // find the fruits associated with the logged in user
+    Favs.find({ owner: req.session.userId })
+        .then(favorites => {
+            console.log(favorites, "new console log")
+            res.render('thenews/favorites', {favorites})
+            // console.log(favorites)
+        })
+        .catch(error => {
+            console.log(error)
+            res.json({ error })
+        })
+})
+
+// seed endpoint
+// router.get('/SeedNews', (req, res) => {
+//     // starting data
+//     const startNews = [
+//         {
+//             "id": "a993a2fc-732e-4b10-b3c3-5ad47bac9a05",
+//             "title": "Dewan Rakyat passes two bills related to court",
+//             "description": "Parliament, Dewan Rakyat, Courts of Judicature, bi",
+//             "url": "http://www.bernama.com/en/news.php?id=2103830",
+//             "author": "bernama",
+//             "image": "https://www.bernama.com/storage/photos/4f3ce435704fccf415de7b9a04e9607e62dea2e506e0d-medium",
+//             "language": "en",
+//             "category": [
+//             "regional"
+//             ],
+//             "published": "2022-07-25 22:16:23 +0000"
+//             }
+// ]
+// })
+
+
+// create news / update news
+router.get('/new', (req, res) => {
+    res.render('thenews/new')
+})
+
+// POST - Create
+router.post('/', (req, res) => {
+
+    News.create(req.body)
+        .then(news => {
+            // res.json(fruit)
+            res.redirect('/thenews')
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+
+// show route
+router.get('/:id', (req, res) => {
+    const favoriteId = req.params.id
+    console.log(favoriteId)
+    Favs.findById(favoriteId)
+        // send back some json
+        .then(favorites => {
+            console.log("my favorite console log",favorites)
+            // res.json(fruit)
+            res.render('thenews/show', { favorites })
+        })
+        .catch(err => {
+            res.json(err)
+        })
+})
+
+
 // my favorites 
 router.post('/:id', (req, res) => {
     req.body.owner = req.session.userId
@@ -36,23 +121,6 @@ router.post('/:id', (req, res) => {
                  res.json(err)
              })
 })
-
-
-
-router.get('/favorites', (req, res) => {
-    // find the fruits associated with the logged in user
-    Favs.find({ owner: req.session.userId })
-        .then(favorites => {
-            res.render('thenews/favorites', {favorites})
-            // console.log(favorites)
-        })
-        .catch(error => {
-            console.log(error)
-            res.json({ error })
-        })
-})
-
-
 
 
 

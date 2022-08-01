@@ -1,17 +1,16 @@
 {% layout 'layout.liquid' %}
+
 {% block content %}
-
-  <h1>hi my new</h1>
-
-  
+<h1><a href="/thenews/favorites">Go back</a></h1>
 
 
-
-
-
-
-
-
-
+<form action="/news" method="POST">
+    <input type="text" name="name" placeholder="enter name">
+    <input type="text" name="article" placeholder="enter article">
+    <input type="text" name="date" placeholder="enter date">
+    <input type="text" name="image" placeholder="enter article link">
+    <input type="text" name="description" placeholder="enter article description">
+    <input type="submit" value="Create New Article">
+</form>
 
 {% endblock %}

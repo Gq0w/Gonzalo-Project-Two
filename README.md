@@ -7,7 +7,7 @@ bcryptjs
 connect-mongo
 dotenv
 express 
-express-sessio
+express-session
 install 
 liquid-express-views
 method-override

@@ -9,12 +9,20 @@
     <img src={{story.image}} style="width: 200px" class="card-img-top" >
       <h5 class="card-title">{{story.title}}</h5>
       <p class="card-text">{{story.description}}</p>
-   <form action="/thenews/{{story._id}}" method="POST">
+      
        <input value="{{story.description}}" name="description" hidden>
        <input value="{{story.title}}" name="title" hidden>
        <input value="{{story.image}}" name="image" hidden>
+       <input value="{{story.link}}" name="link" hidden>
+       <input value="{{story.author}}" name="author" hidden >
 
-   </form>
+
+       <a href="/thenews/{{story._id}}">Show this fav</a>
+
+       <form action="/thenews/{{story._id}}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete">
+       </form>
+
 </div>
 {% endfor %}
 

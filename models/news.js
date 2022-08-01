@@ -7,7 +7,7 @@ const newSchema = new Schema(
         description: String,
         title: String,
         published: String,
-        url: String,
+        link: String,
         image: String
         }
 )
