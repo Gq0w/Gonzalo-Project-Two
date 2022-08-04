@@ -13,7 +13,8 @@
     "node-fetch": "^3.2.8"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node models/SeedNews.js"
   },
   "name": "project-two",
   "version": "1.0.0",

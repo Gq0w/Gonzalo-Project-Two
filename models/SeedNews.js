@@ -12,12 +12,12 @@ db.on('open', () => {
     // array of starter fruits
     const startNews = [
         {
-        "id": "a993a2fc-732e-4b10-b3c3-5ad47bac9a05",
-        "title": "Dewan Rakyat passes two bills related to court",
-        "description": "Parliament, Dewan Rakyat, Courts of Judicature, bi",
-        "link": "http://www.bernama.com/en/news.php?id=2103830",
-        "author": "bernama",
-        "image": "https://www.bernama.com/storage/photos/4f3ce435704fccf415de7b9a04e9607e62dea2e506e0d-medium",
+        id: "a993a2fc-732e-4b10-b3c3-5ad47bac9a05",
+        title: "Dewan Rakyat passes two bills related to court",
+        description: "Parliament, Dewan Rakyat, Courts of Judicature, bi",
+        link: "http://www.bernama.com/en/news.php?id=2103830",
+        author: "bernama",
+        image: "https://www.bernama.com/storage/photos/4f3ce435704fccf415de7b9a04e9607e62dea2e506e0d-medium",
     
         }
         // {
