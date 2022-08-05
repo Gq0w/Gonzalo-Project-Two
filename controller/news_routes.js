@@ -122,60 +122,60 @@ router.post('/:id', (req, res) => {
              })
 })
 
-const db = mongoose.connection
+// const db = mongoose.connection
 
-db.on('open', () => {
-    // array of starter fruits
-    const News = [
-        {
-        title: "Dewan Rakyat passes two bills related to court",
-        description: "Parliament, Dewan Rakyat, Courts of Judicature, bi",
-        link: "http://www.bernama.com/en/news.php?id=2103830",
-        author: "bernama",
-        image: "https://www.bernama.com/storage/photos/4f3ce435704fccf415de7b9a04e9607e62dea2e506e0d-medium",},
-        {
-        title: "I want to be known as Muhammad Azeem, not 'Usain Bolt of Malaysia'",
-        description: "Muhammad Azeem Mohd Fahmi, Usain Bolt of Malaysia,",
-        link: "http://www.bernama.com/en/news.php?id=2103831",
-        author: "bernama",
-        image: "https://www.bernama.com/storage/photos/19d2fa3c382f643d17414a85a81f7b6162dea65d22c97-medium",},
-        { 
-        title: "Maternity leave with full allowance for KAFA teachers, Jakim awaits decision on appeal",
-        description: "MOF, Idris Ahmad, Zafrul, KAFA, JAKIM, maternity",
-        url: "http://www.bernama.com/en/news.php?id=2103834",
-        author: "bernama",
-        image: "https://www.bernama.com/storage/photos/4c39a3ffd2137df9375a242dcbc2a25962d927af97e09-medium",},
-        {  
-        title: "National sprint athletes train with aid of False Start Detection System",
-        description: "athletics, sprint, ‘false start’, system, Mohd",
-        url: "http://www.bernama.com/en/news.php?id=2103840",
-        author: "bernama",
-        image: "https://www.bernama.com/storage/photos/5bb11ba2701f49635aaee3b0d9dc439d61c1b5fc3fdd4-medium",}
-        ]
+// db.on('open', () => {
+//     // array of starter fruits
+//     const News = [
+//         {
+//         title: "Dewan Rakyat passes two bills related to court",
+//         description: "Parliament, Dewan Rakyat, Courts of Judicature, bi",
+//         link: "http://www.bernama.com/en/news.php?id=2103830",
+//         author: "bernama",
+//         image: "https://www.bernama.com/storage/photos/4f3ce435704fccf415de7b9a04e9607e62dea2e506e0d-medium",},
+//         {
+//         title: "I want to be known as Muhammad Azeem, not 'Usain Bolt of Malaysia'",
+//         description: "Muhammad Azeem Mohd Fahmi, Usain Bolt of Malaysia,",
+//         link: "http://www.bernama.com/en/news.php?id=2103831",
+//         author: "bernama",
+//         image: "https://www.bernama.com/storage/photos/19d2fa3c382f643d17414a85a81f7b6162dea65d22c97-medium",},
+//         { 
+//         title: "Maternity leave with full allowance for KAFA teachers, Jakim awaits decision on appeal",
+//         description: "MOF, Idris Ahmad, Zafrul, KAFA, JAKIM, maternity",
+//         url: "http://www.bernama.com/en/news.php?id=2103834",
+//         author: "bernama",
+//         image: "https://www.bernama.com/storage/photos/4c39a3ffd2137df9375a242dcbc2a25962d927af97e09-medium",},
+//         {  
+//         title: "National sprint athletes train with aid of False Start Detection System",
+//         description: "athletics, sprint, ‘false start’, system, Mohd",
+//         url: "http://www.bernama.com/en/news.php?id=2103840",
+//         author: "bernama",
+//         image: "https://www.bernama.com/storage/photos/5bb11ba2701f49635aaee3b0d9dc439d61c1b5fc3fdd4-medium",}
+//         ]
 
     // when we seed data, we usually clear out the db first
-    News.remove({})
-    // then we create that data
-        .then(deletedNews => {
-            console.log('this is what remove returns', deletedNews)
+    // News.remove({})
+    // // then we create that data
+    //     .then(deletedNews => {
+    //         console.log('this is what remove returns', deletedNews)
 
-            // now that our delete was successful, we can create our fruits
-            News.create(startNews)
-                .then(data => {
-                    console.log('the new fruits', data)
-                    db.close()
-                })
-                .catch(error => {
-                    console.log('error:', error)
-                    db.close()
-                })
-        })
-        .catch(error => {
-            console.log('error:', error)
-            db.close()
-        })
+    //         // now that our delete was successful, we can create our fruits
+    //         News.create(startNews)
+    //             .then(data => {
+    //                 console.log('the new fruits', data)
+    //                 db.close()
+    //             })
+    //             .catch(error => {
+    //                 console.log('error:', error)
+    //                 db.close()
+    //             })
+    //     })
+    //     .catch(error => {
+    //         console.log('error:', error)
+    //         db.close()
+    //     })
     // whether it's successful or not, we want to close our db connection
-})
+// })
 
 
 
